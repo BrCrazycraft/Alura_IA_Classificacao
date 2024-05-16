@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from database.Interface.SQL_Interface import DB
 
 search_router = APIRouter()
-db = DB(path="database/repo.db")
+db = DB(path="./database/repo.db")
 
 
 @search_router.get("/search/name/")

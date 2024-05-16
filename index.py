@@ -9,12 +9,12 @@ import uvicorn
 
 app = FastAPI(title="Banco de Dados", description="Banco de dados alura", version="0.0.1")
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="./static"), name="static")
 app.include_router(all_router)
 app.include_router(search_router)
 app.include_router(download_route)
 
-template = Jinja2Templates(directory="view")
+template = Jinja2Templates(directory="./view")
 
 
 @app.get("/", response_class=HTMLResponse)
