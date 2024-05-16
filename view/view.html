@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Api REST</h1>
+        <p>Api de constulta de banco de dados de usarios feito em python, a lista possui usarios com suas posições e votos </p>
+    </header>
+
+    <main>
+        <article>
+            <h2>Exemplo de uso</h2>
+            <p>Exemplos de como fazer solicitação da API</p>
+            <h3>Python</h3>
+            <p>Instale a biblioteca [requests] usando o CMD</p>
+            <div class="codeblock">
+                <p>Terminal</p>
+                <code>pip install requests
+                </code>
+            </div>
+            <p>Após fazer a instalação você precisara importação você pode fazer dois meios de solicitação</p>
+            <p>1. URL</p>
+            <p>solicitação via URL são buscas gerais no Banco de dados</p>
+            <div class="codeblock">
+                <p>Python</p>
+                <code class="codeImport"><pre>
+import requests
+
+#String com o caminho do site mais a sua solicitação
+url = "caminho/solicatacao"
+
+#Variavel que guarda a referencia, da sua solicitação
+response = requests.get(url)
+
+#Verifica se a requisição foi um sucesso
+if response.status_code == 200:
+
+    #JSON com a resposta do servidor
+    data = response.get_json()
+                </pre>            
+                </code>
+            </div>
+            <p>2. Post</p>
+            Solicitação post você faz requisições para a API, envia um JSON e recebe um JSON como resposta
+            <div class="codeblock">
+                <p>Python</p>
+                <code class="codeImport"><pre>
+import requests
+
+#String com o caminho do site mais a sua solicitação
+url = "caminho/solicatacao"
+
+#Um dicionario com a mensagem que você vai enviar ao servidor
+request = {
+    "research": {
+        "repo": "Poneglyph",
+    },
+}
+
+#Variavel que guarda a referencia, da sua solicitação
+response = requests.get(url)
+
+#Verifica se a requisição foi um sucesso
+if response.status_code == 200:
+
+    #JSON com a resposta do servidor
+    data = response.get_json()
+                </pre>            
+                </code>
+            </div>
+            <p>Se você quiser da print na solicitação e so escrever print(data)</p>
+        </article>
+        <article>
+            <h2>Referencia</h2>
+            <h3>Pegar todos</h3>
+            <div class="endpoint">
+                <h5>/all</h5>
+                <p>Faz uma requisição de todos os participantes</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    (Posição:int, Nome:String, Votos:int, LinkDoRepositorio:String),
+    (Posição:int, Nome:String, Votos:int, LinkDoRepositorio:String)
+    ...
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="endpoint">
+                <h5>/name</h5>
+                <p>Faz uma requisição com o nome de todos os participantes</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "Giovanna da Silva de Oliveira",
+    "Victor Verdoodt"
+    ...
+}
+                    </pre>
+                </div>
+            </div>
+            <h3>Pesquisar</h3>
+            <div class="endpoint">
+                <h5>/search/name/</h5>
+                <div class="param">
+                    <p>Parametros</p>
+                    <ul>
+                        <li>nome: String</li>
+                    </ul>
+                </div>
+                <p>Retorna uma lista de competidores com base no nome</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "resultado": [
+        [
+            16,
+            "Pedro Lucas Corrêa Oliveira",
+            78,
+            "https://github.com/pedro-lucaspyt/ChronoWrite-AI-Storyteller"
+        ],
+        [
+            206,
+            "Pedro Henrique",
+            13,
+            "https://github.com/BrCrazycraft/Poneglyph?tab=readme-ov-file#Sintaxe"
+        ]
+        ...
+    ]
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="endpoint">
+                <h5>/search/position/</h5>
+                <div class="param">
+                    <p>Parametros</p>
+                    <ul>
+                        <li>pos: int</li>
+                    </ul>
+                </div>
+                <p>Retorna o competidor com base na sua posição</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "resultado": [
+        206,
+        "Pedro Henrique",
+        13,
+        "https://github.com/BrCrazycraft/Poneglyph?tab=readme-ov-file#Sintaxe"
+    ]
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="endpoint">
+                <h5>/search/vote/</h5>
+                <div class="param">
+                    <p>Parametros</p>
+                    <ul>
+                        <li>vote: int</li>
+                    </ul>
+                </div>
+                <p>Retorna uma lista de competidores com base nos seus votos</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "resultado": [
+        [
+            193,
+            "Derek Barragão",
+            13,
+            "https://github.com/derektsc/AI-For-All"
+        ],
+        [
+            206,
+            "Pedro Henrique",
+            13,
+            "https://github.com/BrCrazycraft/Poneglyph?tab=readme-ov-file#Sintaxe"
+        ]
+        ...
+    ]
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="endpoint">
+                <h5>/search/position/</h5>
+                <div class="param">
+                    <p>Parametros</p>
+                    <ul>
+                        <li>pos: int</li>
+                    </ul>
+                </div>
+                <p>Retorna o competidor com base na sua posição</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "resultado": [
+        206,
+        "Pedro Henrique",
+        13,
+        "https://github.com/BrCrazycraft/Poneglyph?tab=readme-ov-file#Sintaxe"
+    ]
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="endpoint">
+                <h5>/search/repositorio/</h5>
+                <div class="param">
+                    <p>Parametros</p>
+                    <ul>
+                        <li>repo: String</li>
+                    </ul>
+                </div>
+                <p>Retorna uma lista de competidores com base na aproximação do nome do repositório</p>
+                <p class="response">Resposta</p>
+                <div class="response">
+                    <pre>
+{
+    "resultado": [
+        [
+            206,
+            "Pedro Henrique",
+            13,
+            "https://github.com/BrCrazycraft/Poneglyph?tab=readme-ov-file#Sintaxe"
+        ]
+    ]
+}
+                    </pre>
+                </div>
+            </div>
+            <h3>Baixar</h3>
+            <div class="endpoint">
+                <h5>/download/db/</h5>
+                <p>Baixa o banco em formato db</p>
+            </div>
+            <div class="endpoint">
+                <h5>/download/list/</h5>
+                <p>Baixa o banco em formato text</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <a href="https://github.com/BrCrazycraft">GITHUB</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 10px 25px;
+    background-image: linear-gradient(to left, #999999, #404040);
+    color: white;
+
+    p {
+        font-size: 0.7em;
+    }
+    h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 2px black;
+    }
+}
+
+main {
+    min-height: 100vh;
+    padding: 0px 5px;
+
+    .endpoint {
+        background-color: #4040400f;
+        padding: 15px 0px;
+
+        h5 {
+            font-size: 1em;
+            font-style: italic;
+            color: red;
+        }
+
+        .response {
+            background-color: #40404032;
+            padding: 15px 0;
+        }
+
+        .param {
+            p {
+                text-align: center;
+            }
+            ul {
+                background-color: #00450e;
+                li {
+                    color: #ffd0d0;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .codeblock {
+        background-color: black;
+        p {
+            background-color: rgba(255, 255, 255, 0.369);
+            padding: 0 15px;
+            color: white;
+            font-size: 0.7em;
+        }
+        code {
+            padding: 10px;
+            color: #74ff74;
+        }
+        .codeImport {
+            color: #ffffff;
+        }
+    }
+}
+
+footer {
+    background-color: #999999;
+    padding: 5px;
+    text-align: center;
+    transition: 0.5s;
+    text-shadow: 0 0 5px white;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+footer:hover {
+    background-color: #747474;
+
+    a {
+        color: white;
+        font-size: 1.1em;
+    }
+}
