@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac405f82-25e0-40af-85db-9d4da5ba834a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/BackEnd AluraREPO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Teste.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Interface/CMD_Face.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/Interface/SQL_Interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/repositorios.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/Download.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/Get.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/Search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
