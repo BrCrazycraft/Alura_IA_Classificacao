@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from database.Interface.SQL_Interface import DB
 
 all_router = APIRouter()
-db = DB(path="database/repo.db")
+db = DB(path="./database/repo.db")
 
 
 @all_router.get("/all")
