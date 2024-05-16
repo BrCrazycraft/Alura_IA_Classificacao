@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
@@ -18,8 +18,8 @@ template = Jinja2Templates(directory="./view")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def get_home():
-    return template.TemplateResponse("view.html")
+async def get_home(request: Request):
+    return template.TemplateResponse("view.html", {"request": request})
 
 if __name__ == "__main__":
     uvicorn.run("index:app", host="0.0.0.0", port=8000)
