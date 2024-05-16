@@ -3,7 +3,7 @@
 
 ## Documentação
  A documentação pode ser lida apenas usando o link para a API, ou pode ser lida aqui:
- [Documentação](view/view.html)
+ [Documentação](https://aluraiaclassificacao.onrender.com/)
 
 ## Tecnologias
  - Python

@@ -7,7 +7,7 @@ from rotas.Search import search_router
 from rotas.Download import download_route
 import uvicorn
 
-app = FastAPI(title="Banco de Dados", description="Banco de dados alura", version="0.0.1")
+app = FastAPI(title="Banco de Dados", description="Banco de dados alura", version="0.1.0")
 
 app.mount("/static", StaticFiles(directory="./static"), name="static")
 app.include_router(all_router)
